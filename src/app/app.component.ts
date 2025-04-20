@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from "./shared/components/header/header.component";
+import { SidebarComponent } from "./shared/components/sidebar/sidebar.component";
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, RouterModule, HeaderComponent, SidebarComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'accounting-app';
+}

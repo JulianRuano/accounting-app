@@ -1,0 +1,42 @@
+
+<!-- Main content -->
+<main class="p-6 sm:p-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-2">Listado de empresas</h2>
+    <p class="text-sm text-gray-600 mb-6">Elija una empresa para acceder a sus funcionalidades</p>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+      <app-search-bar (search)="filterEnterprises($event)"></app-search-bar>
+
+      <select class="px-4 py-3 rounded-xl bg-gray-100 shadow text-sm">
+        <option value="0">Activas</option>
+        <option value="1">Archivadas</option>
+      </select>
+
+      <a [routerLink]="['/login']" class="ml-auto">
+        <app-button [button]="{ label: 'Agregar', styleClass: 'custom-button-blue' }"></app-button>
+      </a>
+    </div>
+
+    <!-- Cards -->
+    <div class="bg-gray-100 p-6 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+      <div *ngFor="let enterprise of filteredEnterprises" class="bg-white p-6 rounded-xl shadow text-center max-w-xs w-full">
+        <div class="w-26 h-26 mx-auto rounded-full bg-gray-200 mb-4"></div>
+        <h3 class="font-semibold">{{ enterprise.nombre }}</h3>
+        <p class="text-sm text-gray-600 mb-4">NIT: {{ enterprise.nit }}</p>
+        <div class="flex items-center justify-center">
+          <a
+            [routerLink]="['/enterprise', enterprise.nit]"
+            (click)="guardarEmpresaSeleccionada(enterprise)"
+          >
+           <app-button [button]="{ label: 'Acceder', styleClass: 'custom-button-blue' }"></app-button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+

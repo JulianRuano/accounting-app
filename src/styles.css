@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+.custom-button-blue {
+  background-color: #0A1A50;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 35px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #0A1A50;
+}
+
+.custom-button-blue:hover {
+  background-color: white;
+  color: #0A1A50;
+  border: 1px solid #0A1A50;
+}
+
+.custom-button-gray {
+  background-color: #9c9c9c;
+  color: #0A1A50;
+  padding: 0.5rem 1.5rem;
+  border-radius: 35px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #F5F5F5;
+}
+.custom-button-gray:hover {
+  background-color: white;
+  color: #0A1A50;
+  border: 1px solid #0A1A50;
+}

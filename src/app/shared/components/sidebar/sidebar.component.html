@@ -1,0 +1,45 @@
+<div class="flex">
+  <!-- Sidebar -->
+  <div [ngClass]="{
+        'w-54': isOpen,
+        'w-15': !isOpen
+      }"
+      class="bg-[#0A1A50] text-white h-screen transition-all duration-300 flex flex-col">
+
+    <!-- Header del sidebar -->
+    <div class="flex items-center justify-between px-4 py-4">
+      <span *ngIf="isOpen" class="text-lg font-bold">Empresa 1</span>
+      <button (click)="toggleSidebar()" class="focus:outline-none">
+        <span *ngIf="isOpen">✕</span>
+        <span *ngIf="!isOpen">☰</span>
+      </button>
+    </div>
+
+    <!-- Opciones del menú -->
+    <nav class="flex-1">
+      <ul>
+        <li class="px-4 py-2 hover:bg-[#1B2A6B] flex items-center gap-2">
+          <span class="text-lg">🏠</span>
+          <span *ngIf="isOpen">Home</span>
+        </li>
+        <li class="px-4 py-2 hover:bg-[#1B2A6B] flex items-center gap-2">
+          <span class="text-lg">📄</span>
+          <span *ngIf="isOpen">Facturas</span>
+        </li>
+        <li class="px-4 py-2 hover:bg-[#1B2A6B] flex items-center gap-2">
+          <span class="text-lg">📦</span>
+          <span *ngIf="isOpen">Inventario</span>
+        </li>
+        <li class="px-4 py-2 hover:bg-[#1B2A6B] flex items-center gap-2">
+          <span class="text-lg">📊</span>
+          <span *ngIf="isOpen">Reportes</span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenido -->
+  <div class="flex-1 bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold">Contenido</h1>
+  </div>
+</div>

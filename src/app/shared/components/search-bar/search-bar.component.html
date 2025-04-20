@@ -1,0 +1,12 @@
+<div class="relative flex-1 min-w-[200px]">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="onSearchChange()"
+    (focus)="focus.emit()"
+    (blur)="blur.emit()"
+    placeholder="Buscar..."
+    class="w-full pl-10 pr-4 py-2 rounded-xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
+</div>

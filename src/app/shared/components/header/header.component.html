@@ -1,0 +1,66 @@
+  <!-- Header -->
+  <header class="bg-[#0A1A50] text-white flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-3">
+      <div class="w-6 h-6 rounded-full bg-white"></div>
+      <h1 class="text-xl font-bold">Contapp</h1>
+    </div>
+
+    <div *ngIf="enterpriseSelected" class="flex items-center gap-4 flex-1 justify-end ml-8">
+    <!-- Buscador de menú -->
+    <div class="relative w-72">
+      <app-search-bar
+        (search)="filterMenu($event)"
+        (focus)="menuOpen = true"
+        (blur)="menuOpen = false"
+      ></app-search-bar>
+
+      <div
+        class="absolute z-10 bg-white text-black mt-2 rounded shadow w-full"
+        *ngIf="menuOpen && filteredMenu.length > 0"
+      >
+        <div
+          *ngFor="let item of filteredMenu"
+          (click)="irARuta(item.route)"
+          class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+        >
+          {{ item.name }}
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Selector de empresa -->
+      <div class="relative w-48">
+        <input
+          type="text"
+          [(ngModel)]="enterpriseFiltered"
+          (input)="filterEnterprises()"
+          (focus)="enterpriseSelectOpen = true"
+          (blur)="enterpriseSelectOpen = false"
+          placeholder="Seleccionar empresa"
+          class="px-4 py-1.5 rounded-full bg-gray-100 text-black w-full focus:outline-none"
+        />
+        <div
+          class="absolute z-10 bg-white text-black mt-2 rounded shadow w-full max-h-60 overflow-y-auto"
+          *ngIf="enterpriseSelectOpen && filteredEnterprises.length > 0"
+        >
+          <div
+            *ngFor="let enterprise of filteredEnterprises"
+            (mousedown)="selectEnterprises(enterprise)"
+            class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          >
+            {{ enterprise.nombre }}
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+      <svg class="w-4 h-4 text-[#0A1A50]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.1 0-9.2 1.6-9.2 4.9v2.5h18.4v-2.5c0-3.3-6.1-4.9-9.2-4.9z"/>
+      </svg>
+    </div>
+  </header>
