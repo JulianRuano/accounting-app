@@ -1,5 +1,4 @@
 import { Component, Output , EventEmitter} from '@angular/core';
-import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { RouterModule } from '@angular/router';
@@ -8,7 +7,7 @@ import { EnterpriseService } from '../../service/enterprise-service.service';
 
 @Component({
   selector: 'app-list-enterprise',
-  imports: [HeaderComponent,SearchBarComponent,ButtonComponent, RouterModule,CommonModule],
+  imports: [SearchBarComponent,ButtonComponent, RouterModule,CommonModule],
   templateUrl: './list-enterprise.component.html',
   styleUrl: './list-enterprise.component.css'
 })

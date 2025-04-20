@@ -6,26 +6,9 @@ import { ViewEnterpriseComponent } from './features/enterprise/component/view-en
 
 export const routes: Routes = [
 
-  {
-   path: '',
-   component: LandingComponent,
-   title: 'Landing Page'
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    title: 'Login'
-  },
-  {
-    path: 'enterprise',
-    component: ListEnterpriseComponent,
-    title: 'List Enterprise'
-  },
-  {
-    path: 'enterprise/:id',
-    component: ViewEnterpriseComponent,
-    title: 'View Enterprise'
-  },
-
+  {path:'', component: LandingComponent},
+  {path:'login', component: LoginComponent},
+  {path:'enterprise', component: ListEnterpriseComponent},
+  {path:'view-enterprise', component: ViewEnterpriseComponent},
 
 ];
